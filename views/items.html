@@ -1,0 +1,36 @@
+<div class="content">
+  <button ng-click="order='date'">order by Date</button>
+  <button ng-click="order='assignto'">order by Assign-to</button>
+  <input type="text" ng-model="search.item" placeholder="Search To-Do Task" />
+  <input type="text" ng-model="search.assignto" placeholder="Search Task Assigned To" />
+  <ul>
+    <li>
+      <table>
+        <thead>
+          <tr>
+            <td style="width:40%;float:left;"><label for="item" class="">To-Do List</label></td>
+            <td style="width:20%;"><label for="date">Date</label></td>
+            <td style="width:20%;"><label for="assign"> Assigned</label></td>
+            <td style="width:20%;"><label for="remove">Remove</lable></td>
+            </tr>
+         </thead>
+          <tbody id="todo-list">
+          <tr ng-repeat="items in todos | orderBy:order|filter:search">
+            <td style="width:50%"><a ng-href="#!/itemdetails"><h4>{{items.item}}</h4></a></td>
+            <td style="width:20%"><p>{{items.date | date:"MM/dd/yyyy"}}</p></td>
+            <td style="width:30%; text-align:center;"><span>{{items.assignto}}</span> </td>
+            <td style="width:30%; text-align:center;"><div class="remove" ng-click="removeItem(items)">x</div></td>
+         </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+  <form ng-submit="additem()">
+    <input type="text" placeholder="Todo Item" ng-model="newitem.todoitem" required/>
+    <input type="date" placeholder="dd/mm/yyyy" ng-model="newitem.date" required/>
+    <input type="text" placeholder="Assign to" ng-model="newitem.assignto" required/>
+    <input type="text" placeholder="Desription" ng-model="newitem.description" required/>
+    <input type="submit" value="Add new Item"/>
+  </form>
+  <a href="" ng-click="removeAll()">Remove all Items</a>
+</div>
