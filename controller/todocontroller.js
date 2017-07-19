@@ -18,7 +18,7 @@ function TodoController() {
       this.newitem.date = "",
       this.newitem.description = ""
   };
-  TodoController.removeAll = function() {
+    this.removeAll = function() {
     this.todos = [];
   };
 
