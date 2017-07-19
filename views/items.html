@@ -15,22 +15,22 @@
             </tr>
          </thead>
           <tbody id="todo-list">
-          <tr ng-repeat="items in todos | orderBy:order|filter:search">
+          <tr ng-repeat="items in todo.todos | orderBy:order|filter:search">
             <td style="width:50%"><a ng-href="#!/itemdetails"><h4>{{items.item}}</h4></a></td>
             <td style="width:20%"><p>{{items.date | date:"MM/dd/yyyy"}}</p></td>
             <td style="width:30%; text-align:center;"><span>{{items.assignto}}</span> </td>
-            <td style="width:30%; text-align:center;"><div class="remove" ng-click="removeItem(items)">x</div></td>
+            <td style="width:30%; text-align:center;"><div class="remove" ng-click="todo.removeItem(items)">x</div></td>
          </tr>
         </tbody>
       </table>
     </li>
   </ul>
-  <form ng-submit="additem()">
-    <input type="text" placeholder="Todo Item" ng-model="newitem.todoitem" required/>
-    <input type="date" placeholder="dd/mm/yyyy" ng-model="newitem.date" required/>
-    <input type="text" placeholder="Assign to" ng-model="newitem.assignto" required/>
-    <input type="text" placeholder="Desription" ng-model="newitem.description" required/>
+  <form ng-submit="todo.additem()">
+    <input type="text" placeholder="Todo Item" ng-model="todo.newitem.todoitem" required/>
+    <input type="date" placeholder="dd/mm/yyyy" ng-model="todo.newitem.date" required/>
+    <input type="text" placeholder="Assign to" ng-model="todo.newitem.assignto" required/>
+    <input type="text" placeholder="Desription" ng-model="todo.newitem.description" required/>
     <input type="submit" value="Add new Item"/>
   </form>
-  <a href="" ng-click="removeAll()">Remove all Items</a>
+  <a href="" ng-click="todo.removeAll()">Remove all Items</a>
 </div>

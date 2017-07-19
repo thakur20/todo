@@ -1,17 +1,16 @@
 <div class="content">
-  <div ng-controller="ToDoController">
     <h4 style="text-align:center;color:grey;font-weight:bold;font-family:Helvetica"> To do Description</h4>
     <ul>
       <li>
         <table>
-          <tr ng-repeat="items in todos">
+          <tr ng-repeat="items in todo.todos">
             <td style="width:30%;">
               <h4>{{items.item}}</h4></td>
             <td style="width:40%;">
               <p contentEditable="true" style=" text-align:justify;">{{items.description}}</p>
             </td>
             <td style="width:20%; text-align:center;">
-              <div class="remove" ng-click="removeItem(items)">x</div>
+              <div class="remove" ng-click="todo.removeItem(items)">x</div>
             </td>
           </tr>
         </table>
