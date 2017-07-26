@@ -1,0 +1,22 @@
+{
+  "name": "todots",
+  "version": "1.0.0",
+  "description": "todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thakur20/todo.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "siddhant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thakur20/todo/issues"
+  },
+  "homepage": "https://github.com/thakur20/todo#readme"
+}
